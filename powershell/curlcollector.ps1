@@ -6,7 +6,7 @@ $hash = '{
            {
              "key": "service.name",
              "value": {
-               "stringValue": "test-with-curllightbridge"
+               "stringValue": "test-service"
              }
            }
          ]
@@ -38,4 +38,6 @@ $hash = '{
   
   $body = $hash
   
-  Invoke-RestMethod -Method 'Post' -Uri "http://10.127.80.117:4318/v1/traces" -Body $body -ContentType "application/json"
+# replace the ip address below with the local host ip that holds the collector
+
+  Invoke-RestMethod -Method 'Post' -Uri "http://10.1.1.1:4318/v1/traces" -Body $body -ContentType "application/json"
